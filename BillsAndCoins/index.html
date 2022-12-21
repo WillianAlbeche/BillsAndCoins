@@ -15,52 +15,39 @@
     <div class="container">
       <h1 class="mt-4 mb-4 text-center">Bills and coins!</h1>
 
-      <div class="row">
-        <div class="col-3"></div>
-        <div class="card col-3">
-          <div id="productValue" class="card-body text-center">
-            Insira o valor do produto ao lado
-          </div>
+      <div class="form-floating mb-3">
+        <span class="input-group-text">R$</span>
+        <div class="form-floating">
+          <input type="number" class="form-control" id="valueOfProduct" aria-label="Dollar amount (with dot and two decimal places)"
+          step="0.01"
+          value="0.00"
+          placeholder="Valor do produto"
+          required>
+          <label for="valueOfProduct">Valor do produto</label>
         </div>
-        <div class="col-2">
-          <div class="input-group mb-3">
-            <span class="input-group-text">R$</span>
-            <input
-            id="valueOfProduct"
-              type="number"
-              class="form-control"
-              aria-label="Dollar amount (with dot and two decimal places)"
-              step="0.01"
-              value="0.00"
-              required
-            />
-          </div>
+        
       </div>
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-2">
-          <div class="input-group mb-3">
-            <span class="input-group-text">R$</span>
-            <input
-            id="valueField"
-              type="number"
-              class="form-control"
-              aria-label="Dollar amount (with dot and two decimal places)"
-              step="0.01"
-              value="0.00"
-              required
-            />
-          </div>
+      <div class="form-floating">
+        <span class="input-group-text">R$</span>
+        <div class="form-floating">
+          <input type="number" class="form-control" id="valueField" aria-label="Dollar amount (with dot and two decimal places)"
+          step="0.01"
+          value="0.00"
+          required>
+          <label for="valueField">Valor que você pagou</label>
         </div>
-        <div class="col-1">
+      </div>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col text-center">
           <button id="calculateButton" type="button" class="btn btn-primary">
-            Calcule
+            Calcular
           </button>
         </div>
-        <div class="col-4"></div>
+        <div class="col"></div>
         </div>
       </div>
-      
 
       <div class="row">
         <div class="col-6">
@@ -72,6 +59,7 @@
             <li class="text-center list-group-item">0 nota(as) de R$ 20,00</li>
             <li class="text-center list-group-item">0 nota(as) de R$ 10,00</li>
             <li class="text-center list-group-item">0 nota(as) de R$ 5,00</li>
+            <li class="text-center list-group-item">0 nota(as) de R$ 2,00</li>
           </ul>
         </div>
         <div class="col-6">
