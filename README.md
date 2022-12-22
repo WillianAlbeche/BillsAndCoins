@@ -3,13 +3,58 @@
 Bills and coins, is an application to calculate the change and inform the user the best way to make the payment of this change with the smallest number of bills and coins.
 
 ## Understanding the code
+### Below you will see the functions of the application and their explanations:
 
-Below you will see the core function of the application 
+<details><summary> Core Function </summary>
+  
+```javaScript
+btnCalculate.addEventListener("click", (event) => {
+
+// parses
+  let valuePayedInput = parseFloat(valuePayed.value);
+  let valueOfProductInput = parseFloat(valueOfProduct.value);
+//some validations
+  if (valueOfProductInput > valuePayedInput) {
+    if(!alert('saldo insuficiente')){window.location.reload();}
+  } else if(valueOfProductInput === 0 || valuePayedInput === 0){
+    if(!alert('por favor, querido usuario, insira o preço do produto ou o valor que você pagou no produto ;)')){window.location.reload();}
+  }
+
+// Calculating the subtraction of the product price from the amount paid
+  let result = valuePayedInput - valueOfProductInput;
 
 
+changeValue.innerHTML = "";
+updateChangeValue(valuePayedInput, valueOfProductInput, result);
 
+  listBill.innerHTML = "";
+  bills.forEach((bill) => {
+    let qt_bill = parseInt(result / bill);
+    result -= qt_bill * bill;
+    console.log(qt_bill);
 
+    putBillInList(bill, qt_bill);
+  });
 
+  listCoin.innerHTML = "";
+  coins.forEach((coin) => {
+    let qt_coin = parseInt(result / coin);
+    result -= qt_coin * coin;
+    console.log(qt_coin);
+
+    putInCoinList(coin, qt_coin);
+  });
+});
+```
+ Basically, in this piece of code, we create an eventListener so that when the calculate button is clicked, we do what we put inside the closure, in this case, we parse the values of both the product and the input to float, making it easier to handle these values.<br>
+  
+ After that, we validate if the amount paid is less than the product's price or if the values are zero.<br>
+ 
+ Finally, we perform the subtraction and go to the calculation area, where we perform the division of the values of the coins and cedulas.
+
+</details>
+
+<details><summary>Auxiliary Functions</summary>
 
 ```javaScript
 function putBillInList(bill, qt_bill) {
@@ -34,6 +79,10 @@ function updateChangeValue(valuePayedInput, valueOfProductInput, result) {
   changeValue.appendChild(changeValueResult);
 }
 ```
+The auxiliary joins, serve to insert the values into the HTML to be exported to the user, the "putBillInList" is an example of this, as its function is to update the bill table with the values corresponding to each number of bills used in the change.
+  
+ </details>
+ 
 
 
 
