@@ -41,12 +41,9 @@ btnCalculate.addEventListener("click", (event) => {
     if(!alert('por favor, querido usuario, insira o preço do produto ou o valor que você pagou no produto ;)')){window.location.reload();}
   }
 
-//console.log(`valor do produto ${valueOfProductInput} e valor pago ${valuePayedInput}`);
-
 // Calculating the subtraction of the product price from the amount paid
   let result = valuePayedInput - valueOfProductInput;
 
-//console.log(`resultado ${result}`)
 
 changeValue.innerHTML = "";
 updateChangeValue(valuePayedInput, valueOfProductInput, result);
