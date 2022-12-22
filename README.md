@@ -4,9 +4,36 @@ Bills and coins, is an application to calculate the change and inform the user t
 
 ## Understanding the code
 
-Below you will see the core functions of the application 
+Below you will see the core function of the application 
 
 
+
+
+
+
+```javaScript
+function putBillInList(bill, qt_bill) {
+  const liBill = document.createElement("li");
+  liBill.innerText = `${qt_bill} nota(as) de R$  ${bill.toFixed(2)}`;
+  liBill.classList.add("list-group-item");
+  liBill.classList.add("text-center");
+  listBill.appendChild(liBill);
+}
+function putInCoinList(coin, qt_coin) {
+  const liCoin = document.createElement("li");
+  liCoin.innerText = `${qt_coin} moeda(as) de R$  ${coin.toFixed(2)}`;
+  liCoin.classList.add("list-group-item");
+  liCoin.classList.add("text-center");
+  listCoin.appendChild(liCoin);
+}
+
+function updateChangeValue(valuePayedInput, valueOfProductInput, result) {
+  const changeValueResult = document.createElement("div");
+  changeValueResult.innerText = `valor para o troco é de R$ ${result.toFixed(2)}`;
+  changeValueResult.classList.add("text-center");
+  changeValue.appendChild(changeValueResult);
+}
+```
 
 
 
